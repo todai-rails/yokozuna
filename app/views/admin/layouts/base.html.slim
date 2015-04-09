@@ -1,0 +1,10 @@
+html
+  head
+    title I am admin/layouts/base
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    //= render 'front/shared/head'
+  body
+    .front-layouts-base
+      = yield
+      //= yield(:content)

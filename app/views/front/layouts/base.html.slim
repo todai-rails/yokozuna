@@ -1,0 +1,9 @@
+html
+  head
+    title I am front/layouts/base
+    = stylesheet_link_tag 'front', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  body
+    .front-layouts-base
+      = yield
+      //= yield(:content)
