@@ -16,6 +16,7 @@ class Front::SessionsController < FrontController
   end
 
   def destroy
-
+    session[:user_id] = nil
+    redirect_to front_root_url
   end
 end
