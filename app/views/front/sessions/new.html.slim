@@ -1,3 +1,11 @@
 .front-sessions-new
   .container
     h1 ログイン
+
+    = form_tag front_sessions_path, class: 'form-inline' do
+      .form-group
+        = text_field_tag :name, '', class: 'form-control'
+      .form-group
+        = password_field_tag :password, '', class: 'form-control'
+      .form-group
+        = submit_tag 'ログイン', class: 'btn btn-primary'
