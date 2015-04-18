@@ -1,0 +1,13 @@
+.front-registrations-new
+  .container
+    h1 新規登録
+
+    = form_for @user, url: front_registrations_path do |f|
+      .form-group
+        = f.label :name
+        = f.text_field :name
+      .form-group
+        = f.label :password
+        = f.password_field :password
+      .form-group
+        = f.submit '登録', class: 'btn btn-primary'
