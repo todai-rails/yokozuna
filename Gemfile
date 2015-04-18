@@ -19,6 +19,7 @@ group :development, :test do
 
   gem 'spring'
 end
+gem 'bcrypt' # has_secure_passwordのために必要
 
 # bootstrap
 gem 'rails-assets-bootstrap-sass-official'
