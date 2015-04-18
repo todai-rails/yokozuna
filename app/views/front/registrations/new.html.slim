@@ -1,3 +1,10 @@
 .front-registrations-new
   .container
     h1 ユーザ登録画面
+
+    = form_for @user, url: front_registrations_path do |f|
+      = f.label :name
+      = f.text_field :name
+      = f.label :password
+      = f.password_field :password
+      = f.submit '送信'
