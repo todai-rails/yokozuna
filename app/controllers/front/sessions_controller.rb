@@ -1,6 +1,5 @@
 class Front::SessionsController < FrontController
   def new
-
   end
 
   def create
@@ -8,8 +7,9 @@ class Front::SessionsController < FrontController
 
     if user && user.authenticate(params[:password])
       # ログインできる
+      puts 'ログインしました！！！！！！！'
       session[:user_id] = user.id
-      redirect_to front_login_url
+      redirect_to front_root_url
     else
       redirect_to front_login_url
     end

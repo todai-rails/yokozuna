@@ -1,4 +1,9 @@
 .front-pages-top
   .container
     h1 Hello world
-    = link_to 'ユーザ登録', front_join_path, class: 'btn btn-info'
+    - if current_user
+      = "ようこそ #{current_user.name}さん"
+      = link_to '記事を書く', '#', class: 'btn btn-primary'
+    - else
+      = link_to 'ユーザ登録', front_join_path, class: 'btn btn-info'
+      = link_to 'ログイン', front_login_path, class: 'btn btn-info'
