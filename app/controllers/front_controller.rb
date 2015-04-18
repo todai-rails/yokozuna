@@ -4,9 +4,13 @@ class FrontController < ApplicationController
   private
 
   def current_user
-    if session[:user_id]
-      User.find(session[:user_id])
-    end
+    @_current_user ||= (
+      begin
+        User.find(session[:user_id]) if session[:user_id]
+      rescue ActiveRecord::RecordNotFound
+        session[:user_id] = nil
+      end
+    )
   end
   helper_method :current_user
 end
