@@ -10,5 +10,20 @@ class Front::ArticlesController < FrontController
   end
 
   def edit
+    # ログインユーザに紐づく記事の中からparameterのidに合致するものを取得
+    @article = current_user.articles.find(params[:id])
+  end
+
+  def update
+    # ログインユーザに紐づく記事の中からparameterのidに合致するものを取得
+    @article = current_user.articles.find(params[:id])
+
+    # 記事の内容を更新
+    if @article.update(params.require(:article).permit(:title, :body))
+      # 記事一覧画面へ遷移
+      redirect_to front_articles_path
+    else
+      render :edit, status: 422
+    end
   end
 end
