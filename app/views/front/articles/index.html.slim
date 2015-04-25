@@ -1,3 +1,17 @@
 .front-articles-index
   .container
     h1 記事一覧画面
+    table.table
+      thead
+        th タイトル
+        th 本文
+        th 
+      - @articles.each do |article|
+        tr
+          td= article.title
+          td= simple_format article.body
+          td= article.user.name
+          td
+            // 自分の書いた記事の場合のみ編集リンクを作成
+            - if article.user == current_user
+              = link_to '編集', edit_front_article_path(article)

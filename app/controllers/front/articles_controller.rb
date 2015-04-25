@@ -1,5 +1,7 @@
 class Front::ArticlesController < FrontController
   def index
+    # 記事の一覧を取得
+    @articles = Article.all
   end
   
   def new
