@@ -3,7 +3,7 @@
     h1 Hello world
     - if current_user
       = "ようこそ #{current_user.name}さん"
-      = link_to '記事を書く', '#', class: 'btn btn-primary'
+      = link_to '記事を書く', new_front_article_path, class: 'btn btn-primary'
       = link_to 'ログアウト', front_sessions_path, method: :delete, class: 'btn btn-warning'
     - else
       = link_to 'ユーザ登録', front_join_path, class: 'btn btn-info'
