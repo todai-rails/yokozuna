@@ -6,5 +6,8 @@ html
     = csrf_meta_tag
   body
     .front-layouts-base
+      header.navbar.navbar-default.navbar-static-top
+        .container
+          = link_to '横綱', front_root_path
       = yield
       //= yield(:content)
