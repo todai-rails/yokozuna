@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'login' => 'sessions#new'
     resource :sessions, only: [:create, :destroy]
     resources :articles, only: [:index, :new, :edit, :update, :destroy]
+    resources :users, only: [:index]
     root to: 'pages#top'
   end
 

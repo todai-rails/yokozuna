@@ -1,0 +1,11 @@
+.front-users-index
+  .container
+    h1 ユーザー一覧
+    table.table.table-striped
+      tr
+        th ユーザ名
+        th 参加日
+      - @users.each do |user|
+        tr
+          td= user.name
+          td= user.created_at
