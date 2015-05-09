@@ -5,7 +5,10 @@
       tr
         th ユーザ名
         th 参加日
+        th
       - @users.each do |user|
         tr
           td= user.name
           td= user.created_at
+          td
+            = link_to 'プロフィール', front_user_path(user), class: 'btn btn-default'
