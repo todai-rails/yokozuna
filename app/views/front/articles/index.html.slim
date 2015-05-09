@@ -15,3 +15,4 @@
             // 自分の書いた記事の場合のみ編集リンクを作成
             - if article.user == current_user
               = link_to '編集', edit_front_article_path(article)
+              = link_to '削除', front_article_path(article), method: :delete, class: 'btn btn-danger'

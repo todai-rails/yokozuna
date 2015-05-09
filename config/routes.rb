@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :registrations, only: [:create]
     get 'login' => 'sessions#new'
     resource :sessions, only: [:create, :destroy]
-    resources :articles, only: [:index, :new, :edit, :update]
+    resources :articles, only: [:index, :new, :edit, :update, :destroy]
     root to: 'pages#top'
   end
 

@@ -28,4 +28,11 @@ class Front::ArticlesController < FrontController
       render :edit, status: 422
     end
   end
+
+  def destroy
+    @article = current_user.articles.find(params[:id])
+    @article.destroy
+
+    redirect_to front_articles_path
+  end
 end
